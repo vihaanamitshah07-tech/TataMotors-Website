@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #0a0f1c, #111827);
+}
+
+/* dotted layer */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0, 102, 204, 0.15) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.6;
+  z-index: -1;
+}
+body::before {
+  animation: moveDots 20s linear infinite;
+}
+
+@keyframes moveDots {
+  from { transform: translateY(0); }
+  to { transform: translateY(40px); }
+}
